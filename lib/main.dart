@@ -35,33 +35,53 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        leading: const Icon(Icons.search, color: Color(0xFF07425a), size: 30),
-        actions: [
-          CircleAvatar(
-            child: Image.asset('assets/avatar.jpg'),
-          ),
-        ],
+      appBar: CustomAppBar(
+        size: 100,
+        icon: const Icon(Icons.search, color: textColor,),
+        avatarImage: Image.asset('assets/avatar.jpg'),
       ),
-      body: Row(
+      body: Column(
         children: [
-          const Text('Bali', style: TextStyle(fontSize: 36, color: textColor, fontWeight: FontWeight.w700)),
-          Flexible(
-            child: Transform.translate(
-              offset: const Offset(55, 0),
-              child: Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage('design.png'),
-                      fit: BoxFit.fitHeight,
-                      alignment: Alignment.centerRight
-                )),
-                width: MediaQuery.of(context).size.width,
-                height: 100,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 30.0, top: 40.0),
+                child: Text('Bali',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        fontSize: 36,
+                        color: textColor,
+                        fontWeight: FontWeight.w500)),
               ),
-            ),
+              Flexible(
+                child: Transform.translate(
+                  offset: const Offset(55, 30),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('design.png'),
+                            fit: BoxFit.fitHeight,
+                            alignment: Alignment.centerRight)),
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
+                  clipBehavior: Clip.antiAlias,
+                  child: Image.asset('assets/bali1.jpg', width: 200, height: 250, fit: BoxFit.cover),
+                ),
+              ),
+            ],
           ),
         ],
       ),

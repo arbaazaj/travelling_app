@@ -60,7 +60,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/avatar.jpg
-    - design.png
+    - assets/design.png
+    - assets/bali1.jpg
+    - assets/bali2.jpg
+    - assets/bali3.jpeg
+    - assets/bali4.jpg
+    - assets/bali5.jpg
+    - assets/bali6.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -74,6 +80,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Kanit
+      fonts:
+        - asset: assets/Kanit-bold.ttf
+        - asset: assets/Kanit-Regular.ttf
+        - asset: assets/Kanit-Medium.ttf
+        - asset: assets/Kanit-SemiBold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
